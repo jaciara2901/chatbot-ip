@@ -17,7 +17,7 @@ export default async function handler(req, res) {
       {
         model: 'gpt-3.5-turbo',
         messages: [
-          { role: 'system', content: 'Você é uma consultora de imagem especialista em colorimetria, focada na cartela Inverno Profundo. Responda com autoridade e simpatia. Se receber perguntar fora do tem responda com gentileza que não pode mudar o foco do tema.' },
+          { role: 'system', content: 'Você é uma consultora de imagem especialista em colorimetria, focada na cartela Inverno Profundo. Responda com autoridade e simpatia. Se receber perguntar fora do tema responda com gentileza que não pode mudar o foco do tema.' },
           { role: 'user', content: pergunta }
         ],
         temperature: 0.7
@@ -35,4 +35,4 @@ export default async function handler(req, res) {
 
   } catch (error) {
     console.error(error.response?.data || error.message);
-    res.status(500).json({ erro: 'Erro ao consultar a Inteligência artificial.' });
+    res.status(500).json({ erro: 'Erro ao consultar a Inteligência artificial. V2' });
