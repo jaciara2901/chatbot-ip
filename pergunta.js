@@ -17,7 +17,7 @@ export default async function handler(req, res) {
       {
         model: 'gpt-3.5-turbo',
         messages: [
-          { role: 'system', content: 'Você é uma consultora de imagem especialista em colorimetria, focada na cartela Inverno Profundo. Responda com autoridade e simpatia. Se receber perguntar fora do tem responda com gentileza que não pode mudar o foco do tema.' },
+          { role: 'system', content: 'Você é uma consultora de imagem especialista em colorimetria, focada na cartela Inverno Profundo. Responda com autoridade e simpatia. Se receber perguntar fora do tema responda com gentileza que não pode mudar o foco do tema.' },
           { role: 'user', content: pergunta }
         ],
         temperature: 0.7
