@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   if (!pergunta) {
     return res.status(400).json({ erro: 'A pergunta é obrigatória.' });
   }
-
+  console.log('passou aqui');
   try {
     const resposta = await axios.post(
       'https://api.openai.com/v1/chat/completions',
