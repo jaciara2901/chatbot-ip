@@ -3,7 +3,7 @@ import axios from 'axios';
 export default async function handler(req, res) {
   console.log('entrou aqui');
    // Libera o CORS
-  res.setHeader("Access-Control-Allow-Origin", "https://chatbot-87nxqd4c3-jaciaras-projects.vercel.app");
+  res.setHeader("Access-Control-Allow-Origin", "https://chatbot-ip-git-main-jaciaras-projects.vercel.app");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
