@@ -1,6 +1,8 @@
 import axios from 'axios';
 
 export default async function handler(req, res) {
+  console.log('entrou aqui');
+  
   if (req.method !== 'POST') {
     return res.status(405).json({ erro: 'Método não permitido' });
   }
@@ -10,7 +12,7 @@ export default async function handler(req, res) {
   if (!pergunta) {
     return res.status(400).json({ erro: 'A pergunta é obrigatória.' });
   }
-  console.log('passou aqui');
+  
   try {
     const resposta = await axios.post(
       'https://api.openai.com/v1/chat/completions',
