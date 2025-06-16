@@ -79,13 +79,16 @@
           },
           body: JSON.stringify({ pergunta })
         });
-        console.log('teste');
-        const data = await resposta.json();
-
-        if (data.resposta) {
-          respostaDiv.innerText = data.resposta;
+        
+        const contentType = resposta.headers.get("content-type");
+    
+        if (resposta.ok && contentType && contentType.includes("application/json")) {
+          const data = await resposta.json();
+          respostaDiv.innerText = data.resposta || "A resposta veio vazia. Tente novamente.";
         } else {
-          respostaDiv.innerText = "A resposta veio vazia. Tente novamente.";
+          const texto = await resposta.text(); // tenta exibir o erro recebido
+          respostaDiv.innerText = `Erro do servidor: ${texto}`;
+          console.error("Resposta não-JSON:", texto);
         }
 
       } catch (erro) {
